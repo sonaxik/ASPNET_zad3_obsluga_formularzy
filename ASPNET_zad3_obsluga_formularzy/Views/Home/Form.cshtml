@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Form";
+}
+
+@model ASPNET_zad3_obsluga_formularzy.Models.Rejestracja
+
+<h2>Formularz Rejestracyjny</h2>
+
+<form asp-action="Form" method="post">
+
+    <label>Imię:</label>
+    <input asp-for="Imie" />
+    <span asp-validation-for="Imie"></span><br />
+
+    <label>Nazwisko:</label>
+    <input asp-for="Nazwisko" />
+    <span asp-validation-for="Nazwisko"></span><br />
+
+    <label>Email:</label>
+    <input asp-for="Email" type="email" />
+    <span asp-validation-for="Email"></span><br />
+
+    <label>Hasło:</label>
+    <input asp-for="Haslo" type="password" />
+    <span asp-validation-for="Haslo"></span><br />
+
+    <label>Potwierdzenie hasła:</label>
+    <input asp-for="PotwierdzenieHasla" type="password" />
+    <span asp-validation-for="PotwierdzenieHasla"></span><br />
+
+    <label>Numer telefonu:</label>
+    <input asp-for="NrTelefonu" type="tel" />
+    <span asp-validation-for="NrTelefonu"></span><br />
+
+    <label>Wiek:</label>
+    <input asp-for="Wiek" />
+    <span asp-validation-for="Wiek"></span><br />
+
+    <label>Miasto:</label>
+    <select asp-for="Miasto" asp-items="Html.GetEnumSelectList<Miasta>()"></select>
+    <span asp-validation-for="Miasto"></span><br />
+
+    <button type="submit">Zarejestruj się</button>
+    <button type="reset">Wyczyść</button>
+</form>
